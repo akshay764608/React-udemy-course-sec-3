@@ -9,7 +9,12 @@ import ExpenseDate from './ExpenseDate';
 // Importing Card as a wrapper
 import Card from '../UI/Card';
 
-const ExpenseItem = ({ title, amount, date }) => {
+const ExpenseItem = ({ title: newTitle, amount, date }) => {
+  // const [title, setTitle] = useState(newTitle);
+
+  // const clickHandler = () => {
+  //   setTitle('Updated!');
+  // };
   return (
     // ---> Here in Card 'className', Card (Custom HTML elements) does only understand className or whatever name as props and thus we can pass this props to catch on Card.js <---
 
@@ -17,10 +22,11 @@ const ExpenseItem = ({ title, amount, date }) => {
       <ExpenseDate date={date} />
 
       <div className='expense-item__description'>
-        <h2>{title}</h2>
+        <h2>{newTitle}</h2>
 
-        <div className='expense-item__price'>${amount}</div>
+        <div className='expense-item__price'>&#x20B9; {amount}</div>
       </div>
+      {/*<button onClick={clickHandler}>Change Title</button>*/}
     </Card>
   );
 };
