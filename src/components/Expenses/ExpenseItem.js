@@ -17,17 +17,18 @@ const ExpenseItem = ({ title: newTitle, amount, date }) => {
   // };
   return (
     // ---> Here in Card 'className', Card (Custom HTML elements) does only understand className or whatever name as props and thus we can pass this props to catch on Card.js <---
+    <li>
+      <Card classNames='expense-item'>
+        <ExpenseDate date={date} />
 
-    <Card classNames='expense-item'>
-      <ExpenseDate date={date} />
+        <div className='expense-item__description'>
+          <h2>{newTitle}</h2>
 
-      <div className='expense-item__description'>
-        <h2>{newTitle}</h2>
-
-        <div className='expense-item__price'>&#x20B9; {amount}</div>
-      </div>
-      {/*<button onClick={clickHandler}>Change Title</button>*/}
-    </Card>
+          <div className='expense-item__price'>&#x20B9; {amount}</div>
+        </div>
+        {/*<button onClick={clickHandler}>Change Title</button>*/}
+      </Card>
+    </li>
   );
 };
 
